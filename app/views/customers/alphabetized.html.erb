@@ -1,0 +1,9 @@
+<div class="mt-6 mx-6">
+  <%= link_to "All Customers", root_path, class: "button is-primary" %>
+  <%= link_to "Missing Email Customers", missing_email_customers_path, class: "button is-primary" %>
+  <div class="columns is-multiline is-2 mt-6">
+    <% @customers.each do |customer|%>
+      <%= render partial: 'customers/customer', locals: { customer: customer } %>
+    <% end %>
+  </div>
+</div>
